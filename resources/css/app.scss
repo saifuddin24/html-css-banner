@@ -4,3 +4,149 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+:root {
+    --banner-width: 280px;
+    --animation-time: 30s;
+}
+
+
+img, video {
+    width: auto !important;
+    max-width: unset !important;
+}
+
+#banner1 {
+
+    @apply relative w-[var(--banner-width)] h-[350px] border border-green-500 mx-auto my-10;
+
+    overflow: hidden;
+
+    .image-container  {
+        @apply flex  h-full bg-white relative;
+        width: max-content;
+
+        img {
+            @apply h-[100%] block max-w-[auto] w-auto w-auto;
+            animation: image-move   var(--animation-time) infinite linear;
+        }
+    }
+
+    .image-overly-box  {
+        @apply h-full;
+        width: max-content;
+
+        img {
+            animation: image-overly-move var(--animation-time) infinite linear;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    .logo  {
+        @apply  absolute top-4 z-50;
+        left: 0;
+        animation: logo-move var(--animation-time) infinite linear;
+        width: 140px;
+        height: 50px;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+        }
+
+    }
+
+}
+
+@keyframes image-move  {
+
+    0% {
+        transform: translate(0,0);
+        opacity: 0.1
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    16.66666% {
+        transform: translate( calc(-1 * (100% - var(--banner-width)) )  ,0);
+    }
+
+    100% {
+        transform: translate( calc(-1 * (100% - var(--banner-width)) )  ,0);
+    }
+}
+
+@keyframes image-overly-move {
+
+    0% {
+        right: 200%;
+        opacity: 1;
+    }
+
+
+    16.6666% {
+        right: 200%;
+    }
+
+    19.167% {
+        right: 0;
+    }
+
+
+    90% {
+        opacity: 1;
+    }
+
+    93% {
+        opacity: 0.5;
+    }
+
+    97% {
+        opacity: 0;
+    }
+
+    100% {
+        right: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes logo-move {
+
+    0% {
+        margin-left: -140px;
+        opacity: 0;
+    }
+
+
+    25% {
+
+    }
+
+    19.167% {
+        margin-left: -140px;
+        opacity: 0.1
+    }
+
+    22.5% {
+        margin-left: 1rem;
+        opacity: 0.3;
+    }
+
+    25.83% {
+        opacity: 1;
+    }
+
+    100% {
+        margin-left: 1rem;
+    }
+}
+

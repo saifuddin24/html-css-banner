@@ -28,11 +28,12 @@ mix.js('resources/js/app.js', 'public/js')
             extensions: [ '.ts', '.tsx', '.js' ]
         }
     })
-    .sass('resources/css/app.scss', 'public/css', [
-        // require('postcss-import'),
-        // require('tailwindcss'),
-        // require('autoprefixer'),
-
+    .vue()
+    .sass('resources/css/app.scss', 'public/css')
+    .options([
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
     ])
 
     // .sass('resources/css/app.scss', 'public/css');
