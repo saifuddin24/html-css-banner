@@ -1,4 +1,5 @@
 @import "fonts.css";
+@import "animation.scss";
 
 @tailwind base;
 @tailwind components;
@@ -17,11 +18,53 @@ img, video {
     max-width: unset !important;
 }
 
+
+
+.button {
+    height: 28px;
+    width: 100px;
+    border: 1px solid #343434;
+    color:  #343434;
+    display: inline-block;
+    cursor: pointer;
+    padding: 1px 8px;
+    border-radius: 3px;
+
+    svg {
+        height: 12px;
+        display: inline;
+
+        polygon.filled {
+            fill:#1962AC;
+            stroke: #343434;
+        }
+
+        polygon.stroked {
+            fill:none;
+            stroke: #343434;
+        }
+    }
+
+    &:hover {
+        color: red;
+        background-color: #eaecf1;
+        svg polygon.stroked {
+            fill: red;
+            stroke: red;
+        }
+        svg polygon.filled {
+            fill: #343434;
+        }
+    }
+
+}
+
+
 #banner1 {
 
     @apply relative w-[var(--banner-width)] h-[350px] border border-green-500 mx-auto my-10;
 
-    overflow: hidden;
+    //overflow: hidden;
 
     .image-container  {
         @apply flex  h-full bg-white relative;
@@ -62,91 +105,53 @@ img, video {
 
     }
 
-}
 
-@keyframes image-move  {
-
-    0% {
-        transform: translate(0,0);
-        opacity: 0.1
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    16.66666% {
-        transform: translate( calc(-1 * (100% - var(--banner-width)) )  ,0);
-    }
-
-    100% {
-        transform: translate( calc(-1 * (100% - var(--banner-width)) )  ,0);
-    }
-}
-
-@keyframes image-overly-move {
-
-    0% {
-        right: 200%;
-        opacity: 1;
-    }
-
-
-    16.6666% {
-        right: 200%;
-    }
-
-    19.167% {
+    section.middle-text-section,
+    section.bottom-section
+    {
+        border: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
         right: 0;
+
+        article {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            right: 0;
+        }
+
+        article:nth-of-type(1) {
+            animation: text-1-move var(--animation-time) infinite linear;
+        }
+
+        article:nth-of-type(2) {
+            animation: text-2-move var(--animation-time) infinite linear;
+        }
+
+        article:nth-of-type(3) {
+            animation: text-3-move var(--animation-time) infinite linear;
+        }
+
+        article:nth-of-type(4) {
+            animation: text-4-move var(--animation-time) infinite linear;
+        }
     }
 
+    section.bottom-section {
+        border: #1962AC 2px solid;
+        display: block;
 
-    90% {
-        opacity: 1;
+
+        article {
+            position: absolute;
+            top: auto;
+            bottom: 5%;
+            left: 5%;
+            right: 0;
+        }
     }
 
-    93% {
-        opacity: 0.5;
-    }
-
-    97% {
-        opacity: 0;
-    }
-
-    100% {
-        right: 0;
-        opacity: 0;
-    }
 }
-
-@keyframes logo-move {
-
-    0% {
-        margin-left: -140px;
-        opacity: 0;
-    }
-
-
-    25% {
-
-    }
-
-    19.167% {
-        margin-left: -140px;
-        opacity: 0.1
-    }
-
-    22.5% {
-        margin-left: 1rem;
-        opacity: 0.3;
-    }
-
-    25.83% {
-        opacity: 1;
-    }
-
-    100% {
-        margin-left: 1rem;
-    }
-}
-
