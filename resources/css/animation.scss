@@ -6,14 +6,12 @@
         opacity: 0.1
     }
 
-
     5% {
         opacity: 1;
     }
 
     16.66666% {
         transform: translate( calc(-1 * (100% - var(--banner-width)) )  ,0);
-
     }
 
     100% {
@@ -25,9 +23,7 @@
 
     0% {
         right: 200%;
-        opacity: 1;
     }
-
 
     16.6666% {
         right: 200%;
@@ -37,22 +33,17 @@
         right: 0;
     }
 
-
-    90% {
-        opacity: 1;
+    60% {
+        right: 0;
     }
 
-    93% {
-        opacity: 0.5;
+    62% {
+        right: -50%;
     }
 
-    97% {
-        opacity: 0;
-    }
 
     100% {
-        right: 0;
-        opacity: 0;
+        right: -50%;
     }
 }
 
@@ -155,4 +146,22 @@
     95% {  opacity: 1; }
 
     100% { opacity: 0; }
+}
+
+@keyframes man-picture-move {
+    0% {
+        right: -40%;
+    }
+
+    66% {
+        right: -45%;
+    }
+
+    69% {
+        right: 10%;
+    }
+
+    100% {
+        right: 10%;
+    }
 }

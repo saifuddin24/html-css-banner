@@ -21,6 +21,7 @@ img, video {
 
 
 .button {
+
     height: 28px;
     width: 100px;
     border: 1px solid #343434;
@@ -31,6 +32,7 @@ img, video {
     border-radius: 3px;
 
     svg {
+
         height: 12px;
         display: inline;
 
@@ -62,13 +64,14 @@ img, video {
 
 #banner1 {
 
-    @apply relative w-[var(--banner-width)] h-[350px] border border-green-500 mx-auto my-10;
+    @apply relative w-[var(--banner-width)] h-[350px] border border-gray-500 mx-auto my-10;
 
-    //overflow: hidden;
+    overflow: hidden;
 
     .image-container  {
         @apply flex  h-full bg-white relative;
         width: max-content;
+
 
         img {
             @apply h-[100%] block max-w-[auto] w-auto w-auto;
@@ -137,13 +140,13 @@ img, video {
 
         article:nth-of-type(4) {
             animation: text-4-move var(--animation-time) infinite linear;
+
         }
     }
 
     section.bottom-section {
-        border: #1962AC 2px solid;
-        display: block;
 
+        display: block;
 
         article {
             position: absolute;
@@ -151,6 +154,18 @@ img, video {
             bottom: 5%;
             left: 5%;
             right: 0;
+        }
+    }
+
+    .man-picture {
+        @apply absolute bottom-0;
+        width: 40%;
+        animation: man-picture-move var(--animation-time) infinite linear;
+
+        img {
+            @apply block;
+            width: 100% !important;
+            height: auto;
         }
     }
 
